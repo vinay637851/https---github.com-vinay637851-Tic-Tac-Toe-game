@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 270px;
+    width: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto ;
+}
+.box{
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 900;
+    font-family:cursive;
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    border: 0px solid ;
+    box-shadow: 0px 2px 3px  #566573 ;
+    background-color: #212F3D;
+}
+.screen{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #17202A ;
+}
+.score-card{
+    display: flex;
+    gap: 5vh;
+}
+.score-card .part{
+    height: 10vh;
+    width: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    border: 0px solid;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#X,#draw,#O{
+    font-size: 20px;
+    font-weight: 500;
+    font-family:cursive;
+}
+.name{
+    height: 5vh;
+    width: 10vh;
+    background-color: #1C2833 ;
+    text-transform: capitalize;
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10px;
+    border:0px solid;
+    box-shadow: 0px 0px 4px gray;
+}
+.name p{
+    text-transform: uppercase;
+    font-size: 10px;
+}
+.box:hover{
+    filter: drop-shadow(0px 0px 1px white);
+}
+.pop_up{
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0px 1px 5px black;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.1);
+    height: 150px;
+    width: 200px;
+    display: flex;
+    visibility: hidden;
+    font-size: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    transition:top 0.5s,transform 0.5s;
+    align-items: center;
+    background-color: white;   
+    font-family:cursive; 
+}
+.pop_down{
+    visibility: visible;
+    top: 0%;
+    transform:translateX(-50%) scale(1);
+}
+button{
+    height: 5vh;
+    width: 8vw;
+    background-color: darkgreen;
+    color: white;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.effect{
+    animation: eff 0.1s linear infinite;
+}
+@keyframes eff {
+    0%{
+        transform: translateX(-10%);
+    }
+    50%{
+        transform: translateX(10%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+button:hover{
+    filter: drop-shadow(0px 0px 10px green);
+}
+@media screen and (min-width:391px){
+    button{
+        width: 25vw;
+    }
+    .pop_up{
+        height: 120px;
+    }
+    .pop_down{
+        top:0%;
+    }
+    .name{
+        width: 20vw;
+    }
+    .score-card .part{
+        width: 20vw;
+    }
+}
